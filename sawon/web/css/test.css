@@ -1,0 +1,84 @@
+@CHARSET "UTF-8";
+#sawon {
+	position: relative;
+	top: 200px;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 0px 0px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.tab ul li{float:left; margin:0; padding:5px; border:1px solid #006633; background-color:#CCFDC4} 
+.contents{border:1px solid #006633; clear:both; margin:0;} 
+.tab ul {
+}
+</style> 
+<script type="text/javascript"> 
+function showTabMenu(n){ 
+var conId; 
+
+for(i=1;i < 4; i++){ 
+conId = document.getElementById("con"+i);
+if(i==n){ 
+conId.style.display = ""; 
+}else{ 
+conId.style.display = "none"; 
+} 
+} 
+} 
+</script> 
+
+<BODY> 
+<div class="tab"> 
+<ul> 
+<li><a href="javascript_:showTabMenu(1)">탭 메뉴1</a></li> 
+<li><a href="javascript_:showTabMenu(2)">탭 메뉴2</a></li> 
+<li><a href="javascript_:showTabMenu(3)">탭 메뉴3</a></li> 
+</ul> 
+</div> 
+<div> 
+<div class="contents" id="con1">탭 메뉴1 입니다.</div> 
+<div class="contents" id="con2" style="display:none;">탭 메뉴2 입니다.</div> 
+<div class="contents" id="con3" style="display:none;">탭 메뉴3 입니다.</div> 
+</div> 
+</BODY> 
+</HTML> 
+
+------------------------------------------------------------
+<div id="aside">
+	<h2><a href="notice.jsp">공지사항</a></h2>
+	<div id="prj" class="dropdown">
+		<button class="dropbtn">프로젝트</button>
+		<div class="dropdown-content">
+	  		<a href="#">프로젝트 목록</a>
+	    	<a href="#">프로젝트 등록</a>
+		</div>
+	</div>
+	<div class="dropdown">
+		<button class="dropbtn" id="sawon">사원</button>
+		<div class="dropdown-content">
+			<a href="#">사원 목록</a>
+			<a href="saw_insert.jsp">사원 등록</a>
+		</div>
+	</div>
+</div>
