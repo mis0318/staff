@@ -13,13 +13,9 @@
   <script>
   $( function() {
     var dialog, form,
- 
-      // From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
-      emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
       name = $( "#name" ),
-      email = $( "#email" ),
       password = $( "#password" ),
-      allFields = $( [] ).add( name ).add( email ).add( password ),
+      allFields = $( [] ).add( password ),
       tips = $( ".validateTips" );
  
     function updateTips( t ) {
@@ -64,11 +60,7 @@
       valid = valid && checkRegexp( password, /^([0-9a-zA-Z])+$/, "Password는 영문자 소문자, 숫자 5~16 허용합니다. : a-z 0-9" );
  
       if ( valid ) {
-        $( "#users tbody" ).append( "<tr>" +
-          "<td>" + name.val() + "</td>" +
-          "<td>" + email.val() + "</td>" +
-          "<td>" + password.val() + "</td>" +
-        "</tr>" );
+    	  $("#insertmember").submit();
         dialog.dialog( "close" );
       }
       return valid;
@@ -86,15 +78,11 @@
         }
       },
       close: function() {
-        form[ 1 ].reset();
+        form[ 0 ].reset();
         allFields.removeClass( "ui-state-error" );
       }
     });
  
-    form = dialog.find( "form" ).on( "submit", function( event ) {
-      event.preventDefault();
-      addUser();
-    });
  
     $( "#create-user" ).button().on( "click", function() {
       dialog.dialog( "open" );
@@ -108,14 +96,14 @@
 	<TR>
 		<td>아이디 :</td>
 		<td>
-			<input type="text" name="empno" size ="20" maxlength="12" value="1992031800">
+			<input type="text" name="empno" size ="20" maxlength="12">
 		</td>
 	</TR>
 	
 	<tr>		
 		<td>비밀번호:</td>
 		<td>
-		<input type="password" name="pwd" size ="20" maxlength="12" value="1234">
+		<input type="password" name="pwd" size ="20" maxlength="12">
 		</td>
 	
 	</tr>
@@ -127,15 +115,14 @@
 	</form>
 		<div id="dialog-form" title="회원등록">
 		  <p class="validateTips">모든 필드에 입력해 주세요</p>
-		  <form>
+				<form action ="us" method="post" enctype="multipart/form-data" name="insetmember">
 					<table>
 						<tr>
 							<td rowspan="13">
-								<form action ="" method="post" enctype="multipart/form-data" name="empimg">
-								<input type="file" name="FileNam">
+								<input type="image" name="FileName">
 							</td>
 							<td>사원 번호</td>
-							<td><input type="text" size="10" maxlength="10" readonly="readonly" name="empno"></td>
+							<!-- <td><input type="text" size="10" maxlength="10" name="empno"></td> -->
 						</tr>
 						<tr>
 							<td>이름</td>

@@ -37,12 +37,12 @@ public class MemberDao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
-			conn = DBManager.getConnection();
+			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, empno);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				if (rs.getString("pwd") !=null &&rs.getString("pwd").equals(pwd)) {
+				if (rs.getString("pwd") !=null && rs.getString("pwd").equals(pwd)) {
 					result = 1;
 				}else {
 					result = 0;

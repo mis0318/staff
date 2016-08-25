@@ -32,15 +32,19 @@ public class LoginServlet extends HttpServlet {
 
 		String empno = request.getParameter("empno");
 		String pwd = request.getParameter("pwd");
+		
 		MemberDao mDao = MemberDao.getinstance();
 		int result = mDao.userCheck(empno, pwd);
 		System.out.println(result);
 		if(result==1) {
 			MemberDto mDo= mDao.getMember(empno);
-			HttpSession session = request.getSession();
-			session.setAttribute("loginUser", mDo);
-			request.setAttribute("message", "회원가입에 성공했습니다.");
-			url="Main.jsp";
+			if(mDo.getJobno() == 0) {
+				request.setAttribute("message", "승인대기중 입니다.");
+			}else {
+				HttpSession session = request.getSession();
+				session.setAttribute("loginUser", mDo);
+				url="Main.jsp";
+			}
 		}else if(result==0) {
 			request.setAttribute("message", "비밀번호가 맞지 않습니다.");
 		}else if(result==-1) {
