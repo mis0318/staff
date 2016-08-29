@@ -39,12 +39,12 @@ $(function(){
 								<input type="file" name="FileName">
 							</td>
 							<td>사원 번호</td>
-							<td><input type="text" maxlength="10"></td>
+							<td><input type="text" maxlength="10" name="empno"></td>
 						</tr>
 						<tr>
 							<td>부서 번호</td>
 							<td>	
-								<select name="dept">
+								<select name="deptno">
 									<option value="">부서선택</option>
 									<option value="1">개발부</option>
 									<option value="2">관리부</option>
@@ -54,7 +54,7 @@ $(function(){
 						<tr>
 							<td>직급</td>
 							<td>
-								<select name="job">
+								<select name="jobno">
 									<option value="">직급선택</option>
 									<option value="1">사원</option>
 									<option value="2">주임</option>
@@ -69,7 +69,7 @@ $(function(){
 						</tr>
 						<tr>
 							<td>이름</td>
-							<td><input type="text"  maxlength="10"></td>
+							<td><input type="text"  maxlength="10" name="empno"></td>
 						</tr>
 						<tr>
 							<td>민번</td>

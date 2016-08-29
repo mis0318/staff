@@ -31,7 +31,7 @@ $(function(){
 						<li><a href="#tabs-5">스킬목록</a>
 					</ul>
 				<div id="tabs-1">
-				<form>
+				<form >
 					<table>
 						<tr>
 							<td rowspan="13">
@@ -44,7 +44,7 @@ $(function(){
 						<tr>
 							<td>부서 번호</td>
 							<td>	
-								<select name="dept">
+								<select name="deptno">
 									<option value="">부서선택</option>
 									<option value="1">개발부</option>
 									<option value="2">관리부</option>
@@ -54,7 +54,7 @@ $(function(){
 						<tr>
 							<td>직급</td>
 							<td>
-								<select name="job">
+								<select name="jobno">
 									<option value="">직급선택</option>
 									<option value="1">사원</option>
 									<option value="2">주임</option>
@@ -69,23 +69,23 @@ $(function(){
 						</tr>
 						<tr>
 							<td>이름</td>
-							<td><input type="text" size="10" maxlength="10"></td>
+							<td><input type="text" size="10" maxlength="10" name="empnm"></td>
 						</tr>
 						<tr>
 							<td>민번</td>
-							<td><input type="text" size="13" maxlength="13"></td>
+							<td><input type="text" size="13" maxlength="13" name="jumin"></td>
 						</tr>
 						<tr>
 							<td>전화</td>
-							<td><input type="text" size="11" maxlength="11"></td>
+							<td><input type="text" size="11" maxlength="11" name="phone"></td>
 						</tr>
 						<tr>
 							<td>우편</td>
-							<td><input type="text" size="7" maxlength="7"></td>
+							<td><input type="text" size="7" maxlength="7" name="addrno"></td>
 						</tr>
 						<tr>
 							<td>주소</td>
-							<td><input type="text"></td>
+							<td><input type="text" name="address"></td>
 						</tr>
 						<tr>
 							<td>상세주소</td>
@@ -93,19 +93,19 @@ $(function(){
 						</tr>
 						<tr>
 							<td>급여</td>
-							<td><input type="text"></td>
+							<td><input type="text" name="salrary"></td>
 						</tr>
 						<tr>
 							<td>입사일</td>
-							<td><input type="text" size="8" maxlength="8"></td>
+							<td><input type="text" size="8" maxlength="8" name="indt"></td>
 						</tr>
 						<tr>
 							<td>퇴사일</td>
-							<td><input type="text" size="8" maxlength="8"></td>
+							<td><input type="text" size="8" maxlength="8" name="outdt"></td>
 						</tr>
 						<tr>
 							<td>등록일</td>
-							<td><input type="text" size="8" maxlength="8"></td>
+							<td><input type="text" size="8" maxlength="8" name="empdt"></td>
 						</tr>
 					</table><br>
 					<input type="submit" value="전송">

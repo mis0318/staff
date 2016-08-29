@@ -20,7 +20,7 @@
 <body>
 	<div id="wrap">
 		<div id="header">
-			
+	
 			<jsp:include page="base/header.jsp"></jsp:include>
 		</div>
 		<div id="rap">
@@ -29,7 +29,7 @@
 			</div>
 			<div id="content">
 				<table>
-					<p>공지사항<a href="../notice/notice.jsp">more</a></p>
+					<p>공지사항<a href="noticeServlet?command=notice_list">more</a></p>
 						<ul>
 							<li>이동철씨.................</li>
 							<li>김지구씨 실제로 지구로 밝혀져....</li>

@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
 		MemberDao mDao = MemberDao.getinstance();
 		int result = mDao.userCheck(empno, pwd);
 		System.out.println(result);
-		if(result==1) {
+		if(result == 1) {
 			MemberDto mDo= mDao.getMember(empno);
 			if(mDo.getJobno() == 0) {
 				request.setAttribute("message", "승인대기중 입니다.");

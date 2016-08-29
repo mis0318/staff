@@ -28,4 +28,3 @@
       return date;
     }
   } );
-  </script>

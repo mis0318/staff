@@ -5,7 +5,7 @@
 <script src="../js/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="../css/jquery-ui.css">
 <div id="aside">
-	<h2><a href="notice/notice.jsp"><input type="button" value="공지사항"></a></h2>
+	<h2><a href="noticeServlet?command=notice_list"><input type="button" value="공지사항"></a></h2>
 	<div>
 		<p>프로젝트</p>
 		<div id="ui_button">
